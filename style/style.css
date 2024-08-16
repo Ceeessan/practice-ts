@@ -4,8 +4,34 @@
 
 body{
     font-family: sans-serif;
-    background-color: rgb(176, 193, 196);
+    background-color: rgb(183, 198, 193);
     margin: 0;
+}
+
+#description-text{
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0;
+
+    font-size: 16px;
+}
+
+#description-paragraph{
+    margin-top: 0.2rem;
+    margin-left: 0.5rem;
+    margin-bottom: 3rem;
+
+    font-size: 12px;
+}
+
+label, input, textarea{
+    display: block;
+    margin: 0.5rem 0;
+    margin-left: 0.5rem;
+}
+
+label {
+    font-weight: bold;
 }
 
 input, textarea{
@@ -27,6 +53,9 @@ button {
     border: 1px solid #ff0062;
     cursor: pointer;
     color:white;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    font-size: 14px;
 }
 
 button:focus{
@@ -52,4 +81,39 @@ button:active{
     display:flex;
     justify-content:center;
     align-items:center;
+}
+
+.projects li {
+    box-shadow: 1px 1px 8px rgba(0,0,0,0.26);
+    padding: 1rem;
+    margin: 1 rem;
+}
+
+.projects li h2 {
+    color: #ff0062;
+    margin: 0.5rem 0;
+}
+
+#finished-projects li h2 {
+    color: #0044ff;
+}
+
+.projects li h3 {
+    color: #575757;
+    font-size: 1rem;
+}
+
+.project li p {
+    margin: 0;
+}
+
+#finished-projects .droppable {
+    background: #d6e1ff;
+}
+
+#user-input{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ff0062;
+    background: #f7f7f7;
 }
