@@ -3,8 +3,17 @@ function validate(validatableInput) {
     if (validatableInput.required) {
         isValid = isValid && validatableInput.value.toString().trim().length !== 0;
     }
-    if (validatableInput.minLength && typeof validatableInput.value === 'string') {
+    if (validatableInput.minLength != null && typeof validatableInput.value === 'string') {
         isValid = isValid && validatableInput.value.length > validatableInput.minLength;
+    }
+    if (validatableInput.maxLength != null && typeof validatableInput.value === 'string') {
+        isValid = isValid && validatableInput.value.length < validatableInput.maxLength;
+    }
+    if (validatableInput.min != null && typeof validatableInput.value === 'number') {
+        isValid = isValid && validatableInput.value > validatableInput.min;
+    }
+    if (validatableInput.max != null && typeof validatableInput.value === 'number') {
+        isValid = isValid && validatableInput.value < validatableInput.max;
     }
     return isValid;
 }
@@ -39,9 +48,24 @@ var ProjectInput = /** @class */ (function () {
         var enteredTitle = this.titleInputElement.value;
         var enteredDescription = this.descriptionInputElement.value;
         var enteredPeople = this.peopleInputElement.value;
-        if (validate({ value: enteredTitle, required: true, minLength: 5 }) &&
-            validate({ value: enteredDescription, required: true, minLength: 5 }) &&
-            validate({ value: enteredPeople, required: true, minLength: 5 })) {
+        var titleValidatable = {
+            value: enteredTitle,
+            required: true
+        };
+        var descriptionValidatable = {
+            value: enteredDescription,
+            required: true,
+            minLength: 5
+        };
+        var peopleValidatable = {
+            value: enteredPeople,
+            required: true,
+            min: 1,
+            max: 5
+        };
+        if (!validate(titleValidatable) ||
+            !validate(descriptionValidatable) ||
+            !validate(peopleValidatable)) {
             alert('Invalid input, please try again!');
             return;
         }
