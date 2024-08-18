@@ -30,6 +30,28 @@ function autobind(target, methodName, descriptor) {
     };
     return adjDescriptor;
 }
+// List class
+var ProjectList = /** @class */ (function () {
+    function ProjectList(type) {
+        this.type = type;
+        this.templateElement = document.getElementById('project-list');
+        this.hostElement = document.getElementById('app');
+        var importedNode = document.importNode(this.templateElement.content, true);
+        this.element = importedNode.firstElementChild;
+        this.element.id = "".concat(type, "-projects");
+        this.attach();
+        this.renderContent();
+    }
+    ProjectList.prototype.renderContent = function () {
+        var listId = "".concat(this.type, "-ptojects-list");
+        this.element.querySelector('ul').id = listId;
+        this.element.querySelector('h2').textContent = this.type.toUpperCase() + 'PROJECTS';
+    };
+    ProjectList.prototype.attach = function () {
+        this.hostElement.insertAdjacentElement('beforeend', this.element);
+    };
+    return ProjectList;
+}());
 //project input class
 var ProjectInput = /** @class */ (function () {
     function ProjectInput() {
@@ -96,3 +118,5 @@ var ProjectInput = /** @class */ (function () {
     return ProjectInput;
 }());
 var prjInput = new ProjectInput();
+var activePrjList = new ProjectList('active');
+var finishedPrjList = new ProjectList('finished');
