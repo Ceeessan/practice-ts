@@ -88,6 +88,7 @@ button:active{
     padding: 1rem;
     margin: 1rem;
     list-style: none;
+    background: white;
 
 }
 
@@ -107,6 +108,10 @@ button:active{
 
 .project li p {
     margin: 0;
+}
+
+.droppable{
+    background: #ffe3ee;
 }
 
 #finished-projects .droppable {
