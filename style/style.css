@@ -86,7 +86,9 @@ button:active{
 .projects li {
     box-shadow: 1px 1px 8px rgba(0,0,0,0.26);
     padding: 1rem;
-    margin: 1 rem;
+    margin: 1rem;
+    list-style: none;
+
 }
 
 .projects li h2 {
