@@ -120,6 +120,7 @@ function validate(validatableInput: Validatable){
 }
 
 //autobind decorator || används ej.
+/*
 function autobind(
     target: any, 
     methodName: string, 
@@ -138,6 +139,7 @@ function autobind(
 
     return adjDescriptor;
 }
+    */
 
 //Component Base Class
 abstract class Component <T extends HTMLElement, U extends HTMLElement> {
