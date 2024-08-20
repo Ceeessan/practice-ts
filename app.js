@@ -1,3 +1,4 @@
+'/drag-drop.js';
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -93,18 +94,26 @@ function validate(validatableInput) {
     return isValid;
 }
 //autobind decorator || används ej.
-function autobind(target, methodName, descriptor) {
-    var originalMethod = descriptor.value;
-    var adjDescriptor = {
+/*
+function autobind(
+    target: any,
+    methodName: string,
+    descriptor: PropertyDescriptor
+): PropertyDescriptor {
+    const originalMethod = descriptor.value;
+
+    const adjDescriptor: PropertyDescriptor = {
         configurable: true,
         enumerable: false,
-        get: function () {
-            var boundFn = originalMethod.bind(this);
+        get() {
+            const boundFn = originalMethod.bind(this);
             return boundFn;
         }
     };
+
     return adjDescriptor;
 }
+    */
 //Component Base Class
 var Component = /** @class */ (function () {
     function Component(templateId, hostElementId, insertAtStart, newElementId) {
