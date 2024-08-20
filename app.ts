@@ -1,4 +1,4 @@
-import { Draggable, DragTarget } from '/drag-drop.js';
+import { Draggable, DragTarget } from './drag-drop.js';
 
 //Project Type
 enum ProjectStatus { Active, Finished}
