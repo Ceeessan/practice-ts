@@ -1,18 +1,5 @@
 import { Draggable, DragTarget } from './drag-drop.js';
-
-//Project Type
-enum ProjectStatus { Active, Finished}
-
-class Project {
-    constructor(
-        public id: string, 
-        public title: string,
-        public description: string, 
-        public people: number, 
-        public status : ProjectStatus) {
-
-    }
-}
+import { ProjectStatus, Project } from './model-project.js';
 
 //Project State Management
 type Listener<T> = (items: T[]) => void;
